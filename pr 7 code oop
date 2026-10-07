@@ -1,0 +1,39 @@
+#include <iostream>                 // Input-output library
+#include <string>                   // String library
+using namespace std;                // Standard namespace
+
+class String
+{
+    string str;                     // Variable to store string
+
+public:
+
+    void getData()                  // Member function to take input
+    {
+        cin >> str;                 // Store string
+    }
+
+    void display()                  // Member function to display string
+    {
+        cout << str << endl;        // Display string
+    }
+};
+
+int main()
+{
+    String s1, s2;                  // Create two objects
+
+    cout << "Enter first string: ";
+    s1.getData();                   // Store first string
+
+    cout << "Enter second string: ";
+    s2.getData();                   // Store second string
+
+    cout << "First string: ";
+    s1.display();                   // Display first string
+
+    cout << "Second string: ";
+    s2.display();                   // Display second string
+
+    return 0;                       // End program
+}
