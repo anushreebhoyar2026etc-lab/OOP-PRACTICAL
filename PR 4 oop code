@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+    int real, imag;                    // Real and imaginary parts
+
+public:
+
+    Complex(int r, int i)              // Constructor
+    {
+        real = r;                      // Initialize real part
+        imag = i;                      // Initialize imaginary part
+    }
+
+    Complex add(Complex c)             // Function to add complex numbers
+    {
+        return Complex(real + c.real,  // Add real parts
+                       imag + c.imag); // Add imaginary parts
+    }
+
+    void display()                     // Function to display complex number
+    {
+        cout << real << " + " << imag << "i"; // Display number
+    }
+};
+
+int main()
+{
+    Complex c1(3, 4);                  // Initialize first complex number
+    Complex c2(2, 5);                  // Initialize second complex number
+
+    Complex c3 = c1.add(c2);           // Add two complex numbers
+
+    cout << "First Complex Number: ";  // Display first number
+    c1.display();
+
+    cout << "\nSecond Complex Number: "; // Display second number
+    c2.display();
+
+    cout << "\nAddition: ";            // Display addition result
+    c3.display();
+
+    return 0;                          // End of program
+}
