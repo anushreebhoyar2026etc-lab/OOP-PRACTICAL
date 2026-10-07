@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class Display
+{
+public:
+
+    void print(string str)          // print() for string
+    {
+        cout << "String: " << str; // Display string
+    }
+
+    void print(int num)             // print() for integer
+    {
+        cout << "Integer: " << num; // Display integer
+    }
+};
+
+int main()
+{
+    Display d;                      // Create object
+
+    d.print("Hello");               // Call print() for string
+
+    cout << endl;
+
+    d.print(100);                   // Call print() for integer
+
+    return 0;                       // End program
+}
