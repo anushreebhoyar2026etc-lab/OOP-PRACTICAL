@@ -1,0 +1,51 @@
+#include <iostream>                         // Include input-output library
+using namespace std;                        // Use standard namespace
+
+class Complex
+{
+    float real, imag;                       // Declare real and imaginary parts
+
+public:
+
+    void getData()                          // Function to get complex number
+    {
+        cout << "Enter real part: ";        // Ask for real part
+        cin >> real;                        // Read real part
+
+        cout << "Enter imaginary part: ";   // Ask for imaginary part
+        cin >> imag;                        // Read imaginary part
+    }
+
+    Complex operator*(float scalar)         // Overload * operator
+    {
+        Complex temp;                       // Create temporary object
+
+        temp.real = real * scalar;          // Multiply real part by scalar
+        temp.imag = imag * scalar;          // Multiply imaginary part by scalar
+
+        return temp;                        // Return the result
+    }
+
+    void display()                          // Function to display complex number
+    {
+        cout << real << " + " << imag << "i" << endl; // Display result
+    }
+};
+
+int main()
+{
+    Complex c1, result;                     // Create two Complex objects
+    float scalar;                           // Declare scalar variable
+
+    c1.getData();                           // Get complex number from user
+
+    cout << "Enter scalar value: ";         // Ask for scalar value
+    cin >> scalar;                          // Read scalar value
+
+    result = c1 * scalar;                   // Multiply complex number by scalar
+
+    cout << "Result: ";                     // Display result message
+    result.display();                       // Display final complex number
+
+    return 0;                               // End the program
+}
