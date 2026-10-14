@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    try {
+        try {
+            // Inner try block
+            int a = 10, b = 0;
+
+            if (b == 0) {
+                throw b;  // Throw an exception
+            }
+
+            cout << a / b;
+        }
+        catch (int x) {
+            // Inner catch block
+            cout << "Inner catch: Exception caught!" << endl;
+
+            throw;  // Rethrow the same exception
+        }
+    }
+    catch (int x) {
+        // Outer catch block
+        cout << "Outer catch: Exception handled!" << endl;
+    }
+
+    return 0;
+}
