@@ -1,48 +1,48 @@
+
 #include <iostream>
 using namespace std;
 
 // Base class
-class Machine {
+class FoodItem {
 public:
-    // Virtual function to achieve run-time polymorphism
-    virtual void start() {
-        cout << "Machine is starting" << endl;
+    // Virtual function
+    virtual void calculateBill() {
+        cout << "Calculating food bill..." << endl;
     }
 };
 
-// Derived class Printer
-class Printer : public Machine {
+// Derived class Pizza
+class Pizza : public FoodItem {
 public:
-    // Override the start() function of the base class
-    void start() override {
-        cout << "Printer is printing" << endl;
+    void calculateBill() override {
+        int price = 250;
+        cout << "Pizza Bill = Rs. " << price << endl;
     }
 };
 
-// Derived class Scanner
-class Scanner : public Machine {
+// Derived class Burger
+class Burger : public FoodItem {
 public:
-    // Override the start() function of the base class
-    void start() override {
-        cout << "Scanner is scanning" << endl;
+    void calculateBill() override {
+        int price = 120;
+        cout << "Burger Bill = Rs. " << price << endl;
     }
 };
 
 int main() {
-    // Create objects of derived classes
-    Printer p;
-    Scanner s;
+    Pizza p;
+    Burger b;
 
-    // Create a base class pointer
-    Machine *m;
+    // Base class pointer
+    FoodItem *item;
 
-    // Point to Printer object and call start()
-    m = &p;
-    m->start();
+    // Calls Pizza's calculateBill()
+    item = &p;
+    item->calculateBill();
 
-    // Point to Scanner object and call start()
-    m = &s;
-    m->start();
+    // Calls Burger's calculateBill()
+    item = &b;
+    item->calculateBill();
 
-    return 0;  // End the program
+    return 0;
 }
