@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+// Base class
+class Machine {
+public:
+    // Virtual function to achieve run-time polymorphism
+    virtual void start() {
+        cout << "Machine is starting" << endl;
+    }
+};
+
+// Derived class Printer
+class Printer : public Machine {
+public:
+    // Override the start() function of the base class
+    void start() override {
+        cout << "Printer is printing" << endl;
+    }
+};
+
+// Derived class Scanner
+class Scanner : public Machine {
+public:
+    // Override the start() function of the base class
+    void start() override {
+        cout << "Scanner is scanning" << endl;
+    }
+};
+
+int main() {
+    // Create objects of derived classes
+    Printer p;
+    Scanner s;
+
+    // Create a base class pointer
+    Machine *m;
+
+    // Point to Printer object and call start()
+    m = &p;
+    m->start();
+
+    // Point to Scanner object and call start()
+    m = &s;
+    m->start();
+
+    return 0;  // End the program
+}
