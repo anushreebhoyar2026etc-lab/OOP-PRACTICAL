@@ -1,0 +1,32 @@
+#include <iostream>              // Header file for input and output
+using namespace std;             // Use standard namespace
+
+template <class T>                // Declare a class template
+class Sample
+{
+    T value;                      // Variable of generic data type
+
+public:
+    Sample(T v)                   // Constructor to initialize value
+    {
+        value = v;                // Assign v to value
+    }
+
+    void display()                // Function to display the value
+    {
+        cout << "Value = " << value << endl;  // Print the value
+    }
+};
+
+int main()
+{
+    Sample<int> s1(100);          // Create object for integer
+    Sample<float> s2(25.5f);      // Create object for float
+    Sample<char> s3('A');         // Create object for character
+
+    s1.display();                 // Display integer value
+    s2.display();                 // Display float value
+    s3.display();                 // Display character value
+
+    return 0;                     // End the program
+}
