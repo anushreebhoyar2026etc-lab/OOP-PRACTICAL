@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+namespace A {
+    int x = 10;
+}
+
+namespace B {
+    int x = 20;
+}
+
+int main() {
+    cout << "Value of A: " << A::x << endl;
+    cout << "Value of B: " << B::x << endl;
+
+    return 0;
+}
