@@ -1,0 +1,43 @@
+
+#include <iostream>
+using namespace std;
+
+// Class template
+template <class T>
+class Calculator {
+public:
+    T a, b;
+
+    Calculator(T x, T y) {
+        a = x;
+        b = y;
+    }
+
+    T add() {
+        return a + b;
+    }
+};
+
+// Function template
+template <class T>
+T maximum(T x, T y) {
+    return (x > y) ? x : y;
+}
+
+int main() {
+    // Using class template
+    Calculator<int> c1(10, 20);
+    cout << "Sum of integers: " << c1.add() << endl;
+
+    Calculator<float> c2(2.5, 3.5);
+    cout << "Sum of floats: " << c2.add() << endl;
+
+    // Using function template
+    cout << "Maximum of integers: "
+         << maximum<int>(10, 20) << endl;
+
+    cout << "Maximum of floats: "
+         << maximum<float>(4.5, 2.5) << endl;
+
+    return 0;
+}
